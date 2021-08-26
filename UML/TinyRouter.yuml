@@ -1,0 +1,23 @@
+// {type:class}
+// {direction:topDown}
+// {generate:true}
+
+[TinyRouter|+viewControllerFactories;+handlerFactories|+registerModuleRoute;+register;+viewController;+handler;+push;+present;+handle]
+[TinyRouter]-.->[<<interface>>;ModuleRoute]
+[TinyRouter]-.->[RouteKey]
+[RouteKey|-rawValue]
+[<<interface>>;ModuleRoute|+register]
+
+
+[RouteA]-.-^[<<interface>>;ModuleRoute]
+[RouteA]-.-extend>[RouteKey]
+[ModuleA]<-[RouteA]
+
+[RouteB]-.-^[<<interface>>;ModuleRoute]
+[RouteB]-.-extend>[RouteKey]
+[ModuleB]<-[RouteB]
+
+[RouteC]-.-^[<<interface>>;ModuleRoute]
+[RouteC]-.-extend>[RouteKey]
+[ModuleC]<-[RouteC]
+

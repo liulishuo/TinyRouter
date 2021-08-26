@@ -1,0 +1,16 @@
+// {type:class}
+// {direction:topDown}
+// {generate:true}
+
+[<<interface>>;NavigatorType|-register(); -handle(); -viewController(); -handler(); -pushURL(); -pushViewController(); -presentURL(); -presentViewController(); -openURL()]
+[Navigator]-.-^[<<interface>>;NavigatorType]
+[<<interface>>;NavigatorType]-.->[<<interface>>;NavigatorDelegate]
+[<<interface>>;NavigatorType]-.->[<<interface>>;UINavigationControllerType]
+[<<interface>>;NavigatorType]-.->[<<interface>>;UIViewControllerType]
+[<<interface>>;NavigatorType]-.->[<<interface>>;URLConvertible|-urlValue;-queryParameters]
+[<<interface>>;NavigatorType]-.->[URLMatcher|-valueConverters|-match;]
+
+[NavigationMap|+initialize]-.->[<<interface>>;NavigatorType]
+[NavigationMap|+initialize]->[ModuleA]
+[NavigationMap|+initialize]->[ModuleB]
+[NavigationMap|+initialize]->[ModuleC]
